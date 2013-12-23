@@ -1,4 +1,5 @@
 require 'mobile-fu/tablet'
+require 'mobile-fu/android'
 require 'rails'
 require 'rack/mobile-detect'
 
@@ -156,6 +157,10 @@ module ActionController
 
       def is_tablet_device?
         ::MobileFu::Tablet.is_a_tablet_device? request.user_agent
+      end
+      
+      def is_android_device?
+        ::MobileFu::Android.is_android_device? request.user_agent
       end
 
       def is_mobile_device?
